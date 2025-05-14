@@ -19,9 +19,9 @@ namespace Replens
         private void RefreshTimer_Tick(object sender, EventArgs e)
         {
             DateTime temptime = DateTime.Now;
-            int hour    = temptime.Hour;
-            int minute  = temptime.Minute;
-            string ampm = "am";
+            int hour          = temptime.Hour;
+            int minute        = temptime.Minute;
+            string ampm       = "am";
 
             RefreshTimer.Enabled = false;
             if(hour > 12)
