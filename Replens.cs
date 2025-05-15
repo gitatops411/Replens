@@ -15,11 +15,9 @@ namespace Replens
         {
             // Allocate column widths according to screen size
 
-            Screen primaryScreen = Screen.PrimaryScreen;
-            int colZ, colP, colD, colM, width;
+            int colZ, colP, colD, colM;
 
-            width = primaryScreen.Bounds.Width;
-            DataGrid.Width = width;
+            DataGrid.Width = Screen.PrimaryScreen.Bounds.Width;
             colZ = (int) (DataGrid.Width * .35); // 35%
             colP = (int) (DataGrid.Width * .23); // 23%
             colD = (int) (DataGrid.Width * .23); // 23%
@@ -46,8 +44,6 @@ namespace Replens
                 hour -= 12;
             }
             string datestr = string.Format("{0}:{1:D2} {2}", hour, minute, ampm);
-
-
             try
             {
                 _ = v_KDB_Zone_ReplensTableAdapter.Fill(Dataset.v_KDB_Zone_Replens);
@@ -55,7 +51,6 @@ namespace Replens
                 ClockDisplay.Text = datestr;
                 RefreshTimer.Interval = 20000; /* 20 seconds */
             }
-
             catch(Exception)
             {
                 NetworkErrorMsg.Text = "\r\nThe network connection was lost or interrupted.\r\nA new connection attempt will occur in\r\n       seconds";
