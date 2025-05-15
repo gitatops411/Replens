@@ -13,6 +13,22 @@ namespace Replens
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Allocate column widths according to screen size
+
+            Screen primaryScreen = Screen.PrimaryScreen;
+            int colZ, colP, colD, colM, width;
+
+            width = primaryScreen.Bounds.Width;
+            DataGrid.Width = width;
+            colZ = (int) (DataGrid.Width * .35); // 35%
+            colP = (int) (DataGrid.Width * .23); // 23%
+            colD = (int) (DataGrid.Width * .23); // 23%
+            colM = (int) (DataGrid.Width * .19); // 19%
+            DataGrid.Columns[0].Width = colZ;
+            DataGrid.Columns[1].Width = colD;
+            DataGrid.Columns[2].Width = colP;
+            DataGrid.Columns[3].Width = colM;
+
             RefreshTimer_Tick(sender, e);
         }
 
