@@ -15,17 +15,11 @@ namespace Replens
         {
             // Allocate column widths according to screen size
 
-            int colZ, colP, colD, colM;
-
             DataGrid.Width = Screen.PrimaryScreen.Bounds.Width;
-            colZ = (int) (DataGrid.Width * .35); // 35%
-            colP = (int) (DataGrid.Width * .23); // 23%
-            colD = (int) (DataGrid.Width * .23); // 23%
-            colM = (int) (DataGrid.Width * .19); // 19%
-            DataGrid.Columns[0].Width = colZ;
-            DataGrid.Columns[1].Width = colD;
-            DataGrid.Columns[2].Width = colP;
-            DataGrid.Columns[3].Width = colM;
+            DataGrid.Columns[0].Width = (int) (DataGrid.Width * .35); // 35%
+            DataGrid.Columns[1].Width = (int) (DataGrid.Width * .23); // 23%
+            DataGrid.Columns[2].Width = (int) (DataGrid.Width * .23); // 23%
+            DataGrid.Columns[3].Width = (int) (DataGrid.Width * .19); // 19%
 
             RefreshTimer_Tick(sender, e);
         }
