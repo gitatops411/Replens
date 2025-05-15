@@ -24,7 +24,7 @@ namespace Replens
             string ampm       = "am";
 
             RefreshTimer.Enabled = false;
-            if(hour > 12)
+            if(hour >= 12)
             {
                 ampm = "pm";
                 hour -= 12;
